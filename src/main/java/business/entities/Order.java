@@ -68,11 +68,15 @@ public class Order {
 
     @Override
     public String toString() {
-        return "Order{" +
-                "moment=" + sdf.format(moment) +
-                ", status=" + status +
-                ", client=" + client +
-                ", items=" + items +
-                '}';
+        StringBuilder sb = new StringBuilder();
+        sb.append("Order moment: " + sdf.format(moment) + "\n");
+        sb.append("Order status: " + status + "\n");
+        sb.append("Client : " + client + "\n");
+        sb.append("Order items: " + "\n");
+        for (OrderItem od : items) {
+            sb.append(od + "\n");
+        }
+        sb.append("Total price: $" + total());
+        return sb.toString();
     }
 }

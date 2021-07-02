@@ -31,10 +31,6 @@ public class OrderItem {
 
     @Override
     public String toString() {
-        return "OrderItem{" +
-                "quantity=" + quantity +
-                ", price=" + product.getPrice() +
-                ", product=" + product +
-                '}';
+        return product.getName() + ", $" + product.getPrice() + ", Quantity: " + quantity + ", Subtotal: $" + subTotal();
     }
 }
